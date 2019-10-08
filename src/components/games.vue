@@ -26,9 +26,9 @@
                 </v-row>
             </v-container>
         </div>
-        <div class="join">
+        <div class="join" ref="join_div">
             <div>Join your team's chat</div>
-            <v-btn class="btn_join" rounded color="primary" dark>Join</v-btn>
+            <a class="btn_join" target="_blank">Join</a>
         </div>
     </div>
 </template>
@@ -36,6 +36,19 @@
 import carousel from 'vue-owl-carousel'
 
 export default {
+    data() {
+        return{
+            data: this.$store.state.elements,
+        }
+    },
+
+    mounted() {
+        if (!this.data) {
+            this.$refs.join_div.classList.add('hidden')
+            this.data = ''
+        }
+    },
+
     components: {
         carousel 
     },
@@ -95,6 +108,10 @@ export default {
         background: linear-gradient(48.67deg, #6AB2E0 0%, #85EAD5 100%);
         box-shadow: 0 12px 36px 0 rgba(116,198,220,0.32);
         padding: 11px 73px !important;
+        border-radius: 50px;
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase
     }
     .join>div{
         color: #222737;
@@ -107,5 +124,7 @@ export default {
         text-align: center;
         margin: 38px 26px 12px 26px;
     }
-    
+    .hidden{
+        display: none;
+    }
 </style>

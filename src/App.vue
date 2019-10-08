@@ -13,6 +13,9 @@
     name: 'App',
     components: {
       AllContent,
+    },
+    created() {
+      this.$store.dispatch("loadElements");
     }
   };
 </script>

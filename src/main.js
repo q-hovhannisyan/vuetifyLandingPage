@@ -4,6 +4,8 @@ import vuetify from './plugins/vuetify';
 import store from '../src/vuex/store';
 
 Vue.config.productionTip = false
+window.host = "https://www.mocky.io/";
+
 
 new Vue({
   vuetify,store,
