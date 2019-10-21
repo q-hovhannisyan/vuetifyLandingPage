@@ -2,7 +2,7 @@
     <div class="games_wrapper">
         <div class="invite">
             <div class="text-center position_btn">
-                <v-btn class="btn_rounded" rounded color="primary" dark>invite friends</v-btn>
+                <v-btn href="https://www.google.com/" target="_blank" class="btn_rounded" rounded color="primary" dark>invite friends</v-btn>
             </div>
             <div class="text-center text_games">GAMES</div>
             <v-container>
@@ -26,9 +26,9 @@
                 </v-row>
             </v-container>
         </div>
-        <div class="join" ref="join_div">
+        <div class="join" v-if="elements">
             <div>Join your team's chat</div>
-            <a class="btn_join" target="_blank">Join</a>
+            <v-btn class="btn_join" href="https://www.google.com/" rounded dark target="_blank">Join</v-btn>
         </div>
     </div>
 </template>
@@ -36,17 +36,13 @@
 import carousel from 'vue-owl-carousel'
 
 export default {
-    data() {
-        return{
-            data: this.$store.state.elements,
+    computed: {
+        elements(){
+            return this.$store.state.elements;
         }
     },
+    created() {
 
-    mounted() {
-        if (!this.data) {
-            this.$refs.join_div.classList.add('hidden')
-            this.data = ''
-        }
     },
 
     components: {
@@ -56,6 +52,16 @@ export default {
 </script>
 
 <style scoped>
+    .btn_join{
+        font-weight: 400;
+        background: linear-gradient(-90deg, #6AB2E0 0%, #85EAD5 100%) !important;
+        box-shadow: 0 12px 36px 0 rgba(116,198,220,0.32) !important;
+        padding: 11px 73px !important;
+        /* border-radius: 50px;
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase */
+    }
     .text_games{
         padding-top: 40px;
         color: #FFF;
@@ -103,16 +109,7 @@ export default {
         align-items: center;
         flex-direction: column
     }
-    .btn_join{
-        font-weight: 400;
-        background: linear-gradient(48.67deg, #6AB2E0 0%, #85EAD5 100%);
-        box-shadow: 0 12px 36px 0 rgba(116,198,220,0.32);
-        padding: 11px 73px !important;
-        border-radius: 50px;
-        text-decoration: none;
-        color: #fff;
-        text-transform: uppercase
-    }
+
     .join>div{
         color: #222737;
         font-family: Lato;

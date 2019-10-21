@@ -16,11 +16,6 @@ import helpSection from './helpSection.vue';
 import footer from './footer.vue';
 
 export default {
-  data() {
-    return {
-      elements: this.$store.state.tourData
-    }
-  },
   components: {
     'app-menu': menu,
     'app-match': match,

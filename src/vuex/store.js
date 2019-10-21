@@ -20,12 +20,10 @@ import axios from 'axios';
     actions: {
         loadElements(context){
             // eslint-disable-next-line no-undef
-            axios.get(`${host}v2/5185415ba171ea3a00704eed`)
+            axios.get(`${host}` + 'v2/5185415ba171ea3a00704eed')
             .then((response)=>{
                 context.commit("mutateElements", response.data) 
             })
         },
     }
-
 })
-

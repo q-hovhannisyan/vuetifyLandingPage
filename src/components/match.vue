@@ -39,11 +39,11 @@
 
 <script>
     export default {
-        data(){
-            return{
-                elements: this.$store.state.elements
+        computed: {
+            elements(){
+                return this.$store.state.elements;
             }
-        }
+        },
     }
 </script>
 

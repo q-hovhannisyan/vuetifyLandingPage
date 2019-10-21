@@ -2,9 +2,11 @@
     <div class="foot">
         <p class="footer_p">© 2019 GoFund.</p>
         <div class="links">
-            <a href="#" class="link_item">Terms</a>
-            <a href="#" class="link_item">Privacy</a>
-            <img src="../assets/img/fb_socila.png">
+            <a target="_blank" href="https://www.google.com/" class="link_item">Terms</a>
+            <a target="_blank" href="https://www.google.com/" class="link_item">Privacy</a>
+            <a target="_blank" href="https://www.facebook.com/" class="link_fb"> 
+                <img src="../assets/img/fb_socila.png">
+            </a>
         </div>
     </div>
 </template>
@@ -43,5 +45,8 @@ export default {
     .links{
         display: flex;
         align-items: center;
+    }
+    .link_fb{
+        display: block;
     }
 </style>
